@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import redis from './redis.config'
 dotenv.config()
 
 const env = {
@@ -20,7 +21,16 @@ const env = {
     refreshToken: process.env.JWT_REFRESH_SECRET as string,
     accessTokenExpiresIn: process.env.ACCESS_TOKEN_EXPIRESIN || '15m',
     refreshTokenExpiresIn: process.env.REFRESH_TOKEN_EXPIRESIN || '15d'
+  },
+  email: {
+    user: process.env.EMAIL_USER || '',
+    password: process.env.EMAIL_PASS || ''
+  },
+  redis: {
+    redisURL: process.env.REDIS_URL
   }
+  
+
 }
 
 export default env

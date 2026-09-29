@@ -1,11 +1,12 @@
-import env from './config/env.config' // Luôn import đầu tiên để load .env
+import env from './config/env.config' 
 import express, { Express, Request, Response } from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import { connectDB } from './config/db.config'
 import { errorConverter, errorHandler } from './middlewares'
-// import routers from './routes'
+import routers from './routes'
+
 
 const app: Express = express()
 
@@ -13,7 +14,7 @@ const app: Express = express()
 app.use(express.json()) 
 app.use(express.urlencoded({ extended: true })) 
 app.use(cookieParser()) 
-
+app.use('/api/v1', routers)
 
 app.use(
   cors({
