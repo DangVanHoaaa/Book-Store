@@ -64,6 +64,40 @@ const createAccount = async (input: IregisterInput) => {
     return { user: userObj, accessToken, refreshToken }
 }
 
+// login 
+const login = async( email: string, passwordInput: string ) =>
+{
+    const user = await userModel.findOne({email}).select('+password')
+    if(!user)
+    {
+        throw new ApiError(StatusCodes.BAD_REQUEST, 'Email hoặc mật khẩu không chính xác.')
+    }
+
+    const isMatch = await user.isPasswordMatch(passwordInput)
+    if(!isMatch)
+    {
+        throw new ApiError(StatusCodes.BAD_REQUEST, 'Email hoặc mật khẩu không chính xác.')
+    }
+    if(user.status !== userConstant.STATUS.ACTIVE)
+    {        
+        throw new ApiError(StatusCodes.FORBIDDEN    , 'Tài khoản của bạn đã bi khóa.')
+    }
+
+    const accessToken = jwt.generateAccessToken({userId: user._id})
+    const refreshToken  = jwt.generateRefreshToken({userId: user._id})
+
+    const expireAt = new Date(Date.now() + 15 * 24 * 60 * 60 * 1000)
+    await tokenModel.create({
+        userId: user._id,
+        refreshToken: refreshToken,
+        expireAt: expireAt
+    })
+    const userObj = user.toObject()
+    delete (userObj as any).password
+    return {userObj, accessToken, refreshToken}
+}
+
 export default{
-    createAccount
+    createAccount,
+    login
 }
