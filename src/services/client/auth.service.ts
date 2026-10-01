@@ -97,7 +97,50 @@ const login = async( email: string, passwordInput: string ) =>
     return {userObj, accessToken, refreshToken}
 }
 
+
+const refreshToken = async (oldRefreshToken: string) => {
+    if(!oldRefreshToken)
+    {
+        throw new ApiError(StatusCodes.UNAUTHORIZED, 'Refresh token không được để trống')
+    }
+
+    let payload: any
+    try {
+        payload = jwt.verifyRefreshToken(oldRefreshToken)
+    } catch (error) {
+        throw new ApiError(StatusCodes.UNAUTHORIZED, 'Refresh token hết hạn hoặc không hợp lệ.')
+    }
+
+    const tokenDoc = await tokenModel.findOne({refreshToken: oldRefreshToken})
+    if(!tokenDoc)
+    {
+        throw new ApiError(StatusCodes.UNAUTHORIZED, 'Refresh token không tồn tại hoặc đã bị vô hiệu hóa.')
+    }
+
+    await tokenModel.deleteOne({_id: tokenDoc._id})
+
+    const newAcceessToken = jwt.generateAccessToken({userId: payload.userId})
+    const newRefreshToken = jwt.generateRefreshToken({userId: payload.userId})
+    const expireAt = new Date(Date.now() + 15 * 24 * 60 * 60 * 1000)
+    await tokenModel.create({
+        userId: payload.userId,
+        refreshToken: newRefreshToken,
+        expireAt
+    })
+    return { accessToken: newAcceessToken, refreshToken: newRefreshToken}
+}
+
+//logout
+const logout = async (refreshTokenInput: string) => {
+    if(refreshTokenInput)
+    {
+        await tokenModel.deleteOne({ refreshToken: refreshTokenInput})
+    }
+    return { message: 'Đăng xuất thành công'}
+}
 export default{
     createAccount,
-    login
+    login,
+    logout,
+    refreshToken
 }
