@@ -57,7 +57,7 @@ const isAdmin = catchAsync(async (req: Request, res: Response, next: NextFunctio
     if( req.user && req.user.roleId)
     {
         const role = req.user.roleId as any
-        roleSlug = role
+        roleSlug = role.slug
     }
     if(roleSlug === roleConstant.ROLE_SLUG.USER)
     {
@@ -75,7 +75,7 @@ const isSuperAdmin = catchAsync(async (req: Request, res: Response, next: NextFu
     if( req.user && req.user.roleId)
     {
         const role = req.user.roleId as any
-        roleSlug = role
+        roleSlug = role.slug
     }
     if(roleSlug !== roleConstant.ROLE_SLUG.SUPER_ADMIN)
     {
