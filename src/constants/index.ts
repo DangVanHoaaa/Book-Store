@@ -3,3 +3,5 @@ export { default as permissionConstant } from './permission.constant'
 export { default as userConstant } from './user.constant'
 export { default as productConstant } from './product.constant'
 export { default as categoryConstant } from './category.constant'
+export { default as authorConstant } from './author.constant'
+

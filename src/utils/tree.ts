@@ -8,18 +8,18 @@ const buildCategoryTree = (categories: any[], parentId: string | null = null): a
    
     if (categoryParentId === currentParentId) {
     
-      const children = buildCategoryTree(categories, category._id.toString())
+        const children = buildCategoryTree(categories, category._id.toString())
 
-      const categoryObj = category.toObject ? category.toObject() : { ...category }
+        const categoryObj = category.toObject ? category.toObject() : { ...category }
 
-      if (children.length > 0) {
-        categoryObj.children = children
-      } else {
-        categoryObj.children = []
-      }
+        if (children.length > 0) {
+            categoryObj.children = children
+        } else {
+            categoryObj.children = []
+        }
 
-      tree.push(categoryObj)
-    }
+        tree.push(categoryObj)
+        }
   }
 
   return tree

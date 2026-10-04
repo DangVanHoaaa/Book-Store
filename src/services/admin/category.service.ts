@@ -15,7 +15,7 @@ interface ICategoryInput {
 
 //get category 
 const getCategories = async (query: any) => {
-    const limit = parseInt(query.limit || '10', 10)
+    const limit = parseInt(query.limit, 10) || 10;
     const cursor = query.cursor
     const keyword = query.keyword
     const status = query.status

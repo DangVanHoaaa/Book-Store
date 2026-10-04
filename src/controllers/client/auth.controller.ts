@@ -46,44 +46,44 @@ const login = catchAsync(async (req: Request, res: Response) => {
 
 //get me
 const getMe = catchAsync(async (req: Request, res: Response) => {
-  const user = req.user
-  if(!user)
-  {
-    throw new ApiError(StatusCodes.NOT_FOUND,'Tài khoản không tồn tại ' )
-  }
-  return res.status(StatusCodes.OK).json(
-    response(StatusCodes.OK, 'Lấy thông tin người dùng thành công.', { user })
-  )
+    const user = req.user
+    if(!user)
+    {
+      throw new ApiError(StatusCodes.NOT_FOUND,'Tài khoản không tồn tại ' )
+    }
+    return res.status(StatusCodes.OK).json(
+      response(StatusCodes.OK, 'Lấy thông tin người dùng thành công.', { user })
+    )
 })
 
 // refresh token
 const refreshToken = catchAsync(async (req: Request, res: Response) => {
-  const token = req.cookies?.refreshToken
-  const { accessToken, refreshToken: newRefreshToken } = await authService.refreshToken(token)
-  res.cookie('refreshToken', newRefreshToken, {
-    httpOnly: true,
-    secure: env.server.nodeEnv === 'production',
-    sameSite: env.server.nodeEnv === 'production' ? 'none' : 'lax',
-    maxAge: 15 * 24 * 60 * 60 * 1000
-  })
-  return res.status(StatusCodes.OK).json(
-    response(StatusCodes.OK, 'Refresh token thành công!', { accessToken })
-  )
+    const token = req.cookies?.refreshToken
+    const { accessToken, refreshToken: newRefreshToken } = await authService.refreshToken(token)
+    res.cookie('refreshToken', newRefreshToken, {
+      httpOnly: true,
+      secure: env.server.nodeEnv === 'production',
+      sameSite: env.server.nodeEnv === 'production' ? 'none' : 'lax',
+      maxAge: 15 * 24 * 60 * 60 * 1000
+    })
+    return res.status(StatusCodes.OK).json(
+      response(StatusCodes.OK, 'Refresh token thành công!', { accessToken })
+    )
 })
 
 const logout = catchAsync(async (req: Request, res: Response) => {
-  const token = req.cookies?.refreshToken
-  if (token) {
-    await authService.logout(token)
-  }
-  res.clearCookie('refreshToken', {
-    httpOnly: true,
-    secure: env.server.nodeEnv === 'production',
-    sameSite: env.server.nodeEnv === 'production' ? 'none' : 'lax'
-  })
-  return res.status(StatusCodes.OK).json(
-    response(StatusCodes.OK, 'Đăng xuất thành công!')
-  )
+    const token = req.cookies?.refreshToken
+    if (token) {
+      await authService.logout(token)
+    }
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      secure: env.server.nodeEnv === 'production',
+      sameSite: env.server.nodeEnv === 'production' ? 'none' : 'lax'
+    })
+    return res.status(StatusCodes.OK).json(
+      response(StatusCodes.OK, 'Đăng xuất thành công!')
+    )
 })
 export default {
     sendOTP,
