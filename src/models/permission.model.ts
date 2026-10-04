@@ -12,41 +12,12 @@ export interface IPermission {
 
 const permissionSchema = new Schema<IPermission>(
   {
-    code: {
-      type: String,
-      required: true,
-      unique: true,
-      index: true
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
-
-    module: {
-      type: String,
-      enum: permissionConstant.PERMISSIONMODULE,
-      required: true
-    },
-
-    action: {
-      type: String,
-      enum: permissionConstant.PERMISSIONACTION,
-      required: true
-    },
-
-    status: {
-      type: String,
-      enum: permissionConstant.STATUS,
-      default: permissionConstant.STATUS.ACTIVE,
-      index: true
-    },
-
-    position: {
-      type: Number,
-      default: 0
-    }
+    code: {type: String,required: true,unique: true,index: true},
+    name: {type: String,required: true},
+    module: {type: String,enum: permissionConstant.PERMISSIONMODULE,required: true},
+    action: {type: String,enum: permissionConstant.PERMISSIONACTION,required: true},
+    status: {type: String,enum: permissionConstant.STATUS,default: permissionConstant.STATUS.ACTIVE,index: true},
+    position: {type: Number,default: 0}
   },
   {
     timestamps: true,
