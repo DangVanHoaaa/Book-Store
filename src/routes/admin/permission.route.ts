@@ -5,10 +5,9 @@ import { permissionValidate } from '../../validates'
 import { authMiddleware } from '../../middlewares'
 
 const router = Router()
+router.use(authMiddleware.auth, authMiddleware.isAdmin)
 
-
-router.get('/', authMiddleware.auth, authMiddleware.isSuperAdmin, validate(permissionValidate.getPermissions), adminPermissionController.getPermissions)
-
-router.patch('/:id/toggle', authMiddleware.auth, authMiddleware.isSuperAdmin, adminPermissionController.toggleStatus)
+router.get('/', validate(permissionValidate.getPermissions), adminPermissionController.getPermissions)
+router.patch('/:id/toggle', adminPermissionController.toggleStatus)
 
 export default router

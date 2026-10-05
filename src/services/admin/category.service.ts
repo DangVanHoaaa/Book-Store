@@ -6,7 +6,7 @@ import redis from "../../config/redis.config";
 import { STATUS_CODES } from "node:http";
 
 const CATEGORY_KEY = 'categories'
-interface ICategoryInput {
+export interface ICategoryInput {
     name: string
     parentId?: string | null
     description?: string

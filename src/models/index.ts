@@ -4,5 +4,7 @@ export { default as permissionModel } from './permission.model'
 export { default as tokenModel } from './token.model'   
 export { default as categoryModel } from './category.model'   
 export { default as authorModel } from './author.model'   
+export { default as seriesModel } from './series.model'   
+
 
 

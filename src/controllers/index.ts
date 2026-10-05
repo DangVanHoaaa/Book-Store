@@ -2,6 +2,8 @@
 export { default as clientAuthController } from './client/auth.controller'
 export { default as clientCategoryController } from './client/category.controller'
 export { default as clientAuthorController } from './client/author.controller'
+export { default as clientSeriesController } from './client/series.controller'
+
 
 
 
@@ -11,3 +13,4 @@ export { default as adminPermissionController } from './admin/permission.control
 export { default as adminRoleController } from './admin/role.controller'
 export { default as adminCategoryController } from './admin/category.controller'
 export { default as adminAuthorController } from './admin/author.controller'
+export { default as adminSeriesController } from './admin/series.controller'
