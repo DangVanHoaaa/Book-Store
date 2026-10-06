@@ -5,6 +5,8 @@ export { default as CategoryService  } from './client/category.service'
 export { default as authorService  } from './client/author.service'
 export { default as seriesService  } from './client/series.service'
 export { default as bannerService  } from './client/banner.service'
+export { default as productService  } from './client/product.service'
+
 
 
 
@@ -20,3 +22,4 @@ export { default as adminCategoryService } from './admin/category.service'
 export { default as adminAuthorService } from './admin/author.service'
 export { default as adminSeriesService } from './admin/series.service'
 export { default as adminBannerService } from './admin/banner.service'
+export { default as adminProductService } from './admin/product.service'

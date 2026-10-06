@@ -5,6 +5,7 @@ import categoryClientRouter from './client/category.route'
 import authorClientRouter from './client/author.route'
 import seriesClientRouter from './client/series.route'
 import bannerClientRoute from './client/banner.route'
+import clientProductRoute from './client/product.route'
 
 
 
@@ -17,7 +18,7 @@ import categoryAdminRouter from './admin/category.route'
 import authorAdminRouter from './admin/author.route'
 import seriesAdminRouter from './admin/series.route'
 import bannerAdminRoute from './admin/banner.route'
-
+import adminProductRoute from './admin/product.route'
 
 const routers: Router = Router()
 
@@ -29,6 +30,8 @@ routers.use('/admin/categories', categoryAdminRouter)
 routers.use('/admin/authors', authorAdminRouter)
 routers.use('/admin/series', seriesAdminRouter)
 routers.use('/admin/banners', bannerAdminRoute)
+routers.use('/admin/products', adminProductRoute)
+
 
 
 //router client
@@ -37,5 +40,6 @@ routers.use('/categories', categoryClientRouter)
 routers.use('/authors', authorClientRouter)
 routers.use('/series', seriesClientRouter)
 routers.use('/banners', bannerClientRoute)
+routers.use('/products', clientProductRoute)
 
 export default routers
