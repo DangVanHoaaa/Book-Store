@@ -5,5 +5,7 @@ export { default as productConstant } from './product.constant'
 export { default as categoryConstant } from './category.constant'
 export { default as authorConstant } from './author.constant'
 export { default as seriesConstant } from './series.constant'
+export { default as bannerConstant } from './banner.constant'
+
 
 

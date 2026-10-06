@@ -6,9 +6,7 @@ import { response, catchAsync } from '../../utils'
 const getCategoryTree = catchAsync(async (req: Request, res: Response) => {
     const categoryTree = await CategoryService.getCategoryTree()
 
-    res.status(StatusCodes.OK).json(
-        response(StatusCodes.OK, 'Lấy danh sách danh mục thành công.', categoryTree)
-    )
+    res.status(StatusCodes.OK).json(response(StatusCodes.OK, 'Lấy danh sách danh mục thành công.', categoryTree))
 })
 
 export default { getCategoryTree }

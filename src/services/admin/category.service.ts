@@ -17,7 +17,7 @@ export interface ICategoryInput {
 const getCategories = async (query: any) => {
     const limit = parseInt(query.limit, 10) || 10;
     const cursor = query.cursor
-    const keyword = query.keyword
+    const keyword = query.keyword || query.key || query.search
     const status = query.status
     const filter: any = {}
    

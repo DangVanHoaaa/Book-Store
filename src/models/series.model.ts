@@ -5,11 +5,11 @@ import { seriesConstant } from '../constants'
 mongoose.plugin(slug)
 
 export interface ISeries {
-  name: string
-  slug: string
-  description?: string
-  coverImage?: string
-  status: string
+    name: string
+    slug: string
+    description?: string
+    coverImage?: string
+    status: string
 }
 
 const seriesSchema = new Schema<ISeries>(

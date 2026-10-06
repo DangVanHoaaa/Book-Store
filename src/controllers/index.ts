@@ -3,6 +3,8 @@ export { default as clientAuthController } from './client/auth.controller'
 export { default as clientCategoryController } from './client/category.controller'
 export { default as clientAuthorController } from './client/author.controller'
 export { default as clientSeriesController } from './client/series.controller'
+export { default as clientBannerController } from './client/banner.controller'
+
 
 
 

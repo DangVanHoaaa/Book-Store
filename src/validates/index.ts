@@ -5,6 +5,8 @@ export { default as roleValidate } from './admin/role.validate'
 export { default as categoryValidate } from './admin/category.validate'
 export { default as authorValidate } from './admin/author.validate'
 export { default as seriesValidate } from './admin/series.validate'
+export { default as bannerValidate } from './admin/banner.validate'
+
 
 
 

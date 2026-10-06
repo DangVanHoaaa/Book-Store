@@ -5,11 +5,11 @@ import { authorConstant } from '../constants'
 mongoose.plugin(slug)
 
 export interface IAuthor {
-  name: string
-  slug: string
-  bio?: string
-  avatar?: string
-  status: string
+    name: string
+    slug: string
+    bio?: string
+    avatar?: string
+    status: string
 }
 
 const authorSchema = new Schema<IAuthor>(

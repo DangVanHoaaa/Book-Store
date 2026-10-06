@@ -18,7 +18,7 @@ export interface IAuthorInput {
 const getAuthors = async(query: any) => {
     const limit = parseInt(query.limit, 10) || 10;
     const cursor = query.cursor
-    const keyword  = query.key
+    const keyword = query.keyword || query.key || query.search
     const status = query.status
     const filter: any = {}
     if(cursor){

@@ -3,7 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import { permissionModel } from "../../models";
 import { permissionConstant } from "../../constants";
 
-export
+
 
 const getPermissions = async (query: any) => {
     const limit = parseInt(query.limit, 10) || 10;

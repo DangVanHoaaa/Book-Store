@@ -4,30 +4,30 @@ import { userConstant } from '../constants'
 import env from '../config/env.config'
 
 export interface IUser {
-  fullname: string
-  email: string
-  phone?: string
-  password: string
-  roleId: Types.ObjectId
-  status?: string
-  isVerified?: boolean
-  lastLogin?: Date | null
-  deleted?: boolean
-  deletedAt?: Date
-isPasswordMatch(password: string): Promise<boolean>
+    fullname: string
+    email: string
+    phone?: string
+    password: string
+    roleId: Types.ObjectId
+    status?: string
+    isVerified?: boolean
+    lastLogin?: Date | null
+    deleted?: boolean
+    deletedAt?: Date
+  isPasswordMatch(password: string): Promise<boolean>
 }
 
 const userSchema = new Schema<IUser>({
-  fullname:   { type: String, required: true },
-  email:      { type: String, required: true, unique: true, index: true },
-  phone:      String,
-  password:   { type: String, required: true, select: false },
-  roleId:     { type: Schema.Types.ObjectId, ref: 'Role', index: true },
-  status:     { type: String, enum: userConstant.STATUS, default: userConstant.STATUS.ACTIVE, index: true },
-  isVerified: { type: Boolean, default: false },
-  lastLogin:  { type: Date, default: null },
-  deleted:    { type: Boolean, default: false },
-  deletedAt:  Date
+    fullname:   { type: String, required: true },
+    email:      { type: String, required: true, unique: true, index: true },
+    phone:      String,
+    password:   { type: String, required: true, select: false },
+    roleId:     { type: Schema.Types.ObjectId, ref: 'Role', index: true },
+    status:     { type: String, enum: userConstant.STATUS, default: userConstant.STATUS.ACTIVE, index: true },
+    isVerified: { type: Boolean, default: false },
+    lastLogin:  { type: Date, default: null },
+    deleted:    { type: Boolean, default: false },
+    deletedAt:  Date
 }, { timestamps: true })
 
 

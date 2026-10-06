@@ -1,4 +1,4 @@
-const STATUS = {ACTIVE: 'active',INACTIVE: 'inactive'} as const
+enum STATUS {ACTIVE = 'active',INACTIVE = 'inactive'}
 
 export default {
   STATUS

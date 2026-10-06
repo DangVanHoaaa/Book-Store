@@ -5,18 +5,18 @@ import { categoryConstant } from '../constants'
 mongoose.plugin(slug)
 
 export interface ICategory {
-  name: string
-  slug: string
-  parentId?: Types.ObjectId | null
-  description?: string
-  status: string
+    name: string
+    slug: string
+    parentId?: Types.ObjectId | null
+    description?: string
+    status: string
 }
 
 const categorySchema = new Schema<ICategory>(
   {
     name: { type: String, required: true },
     slug: { type: String, slug: 'name', unique: true, index: true },
-    parentId: { type: Schema.Types.ObjectId, ref: 'Category', default: null, index: true }, // 👈 TRƯỜNG LƯU ID DANH MỤC CHA!
+    parentId: { type: Schema.Types.ObjectId, ref: 'Category', default: null, index: true }, 
     description: String,
     status: { type: String, enum: categoryConstant.STATUS, default: categoryConstant.STATUS.ACTIVE, index: true }
   },
