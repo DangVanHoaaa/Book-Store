@@ -1,5 +1,6 @@
 export { default as authValidate } from './client/auth.validate'
 export { default as clientProductValidate } from './client/product.validate'
+export { default as cartValidate } from './client/cart.validate' 
 
 
 
