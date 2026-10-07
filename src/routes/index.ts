@@ -19,6 +19,7 @@ import authorAdminRouter from './admin/author.route'
 import seriesAdminRouter from './admin/series.route'
 import bannerAdminRoute from './admin/banner.route'
 import adminProductRoute from './admin/product.route'
+import adminUploadRoute from './admin/upload.route'
 
 const routers: Router = Router()
 
@@ -31,6 +32,7 @@ routers.use('/admin/authors', authorAdminRouter)
 routers.use('/admin/series', seriesAdminRouter)
 routers.use('/admin/banners', bannerAdminRoute)
 routers.use('/admin/products', adminProductRoute)
+routers.use('/admin/upload', adminUploadRoute)
 
 
 

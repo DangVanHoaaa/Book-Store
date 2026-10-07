@@ -12,3 +12,4 @@ export { default as productModel } from './product.model'
 
 
 
+
