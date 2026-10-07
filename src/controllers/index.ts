@@ -6,6 +6,8 @@ export { default as clientSeriesController } from './client/series.controller'
 export { default as clientBannerController } from './client/banner.controller'
 export { default as clientProductController } from './client/product.controller'
 export { default as clientCartController } from './client/cart.controller'
+export { default as clientAdressController } from './client/address.controller'
+
 
 
 

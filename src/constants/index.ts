@@ -7,6 +7,8 @@ export { default as authorConstant } from './author.constant'
 export { default as seriesConstant } from './series.constant'
 export { default as bannerConstant } from './banner.constant'
 export { default as cartConstant } from './cart.constant'
+export { default as addressConstant } from './address.constant'
+
 
 
 

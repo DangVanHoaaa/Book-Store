@@ -9,6 +9,8 @@ export { default as bannerModel } from './banner.model'
 export { default as productModel } from './product.model'   
 export { default as cartModel } from './cart.model'      
 export { default as cartItemModel } from './cartItem.model'
+export { default as addressModel } from './address.model'
+
 
 
 
