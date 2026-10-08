@@ -11,6 +11,8 @@ export { default as cartModel } from './cart.model'
 export { default as cartItemModel } from './cartItem.model'
 export { default as addressModel } from './address.model'
 export { default as favoriteModel } from './favorite.model'
+export { default as reviewModel } from './review.model'
+
 
 
 

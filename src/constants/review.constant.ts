@@ -1,0 +1,5 @@
+export const REVIEW_LIMITS = {MIN_RATING: 1,MAX_RATING: 5,MAX_CONTENT_LENGTH: 1000 }
+
+export default {
+  REVIEW_LIMITS
+}

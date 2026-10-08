@@ -9,6 +9,7 @@ import clientProductRoute from './client/product.route'
 import clientCartRoute from './client/cart.route'
 import clientAddressRoute from './client/address.route'
 import clientFavoriteRoute from './client/favorite.route'
+import clientReviewRoute from './client/review.route'
 
 
 
@@ -50,5 +51,6 @@ routers.use('/products', clientProductRoute)
 routers.use('/cart', clientCartRoute)
 routers.use('/addresses', clientAddressRoute)
 routers.use('/favorites', clientFavoriteRoute)
+routers.use('/reviews', clientReviewRoute)
 
 export default routers

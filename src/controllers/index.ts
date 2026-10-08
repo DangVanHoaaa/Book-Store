@@ -8,6 +8,8 @@ export { default as clientProductController } from './client/product.controller'
 export { default as clientCartController } from './client/cart.controller'
 export { default as clientAdressController } from './client/address.controller'
 export { default as clientFavoriteController } from './client/favorite.controller'
+export { default as clientReviewController } from './client/review.controller'
+
 
 
 
