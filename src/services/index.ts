@@ -8,6 +8,8 @@ export { default as bannerService  } from './client/banner.service'
 export { default as productService  } from './client/product.service'
 export { default as cartService  } from './client/cart.service'
 export { default as addressService  } from './client/address.service'
+export { default as favoriteService  } from './client/favorite.service'
+
 
 
 
