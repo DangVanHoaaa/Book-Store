@@ -10,7 +10,8 @@ export { default as cartService  } from './client/cart.service'
 export { default as addressService  } from './client/address.service'
 export { default as favoriteService  } from './client/favorite.service'
 export { default as reviewService  } from './client/review.service'
-
+export { default as orderService  } from './client/order.service'
+export { default as paymentService  } from './client/payment.service'
 
 
 
@@ -28,3 +29,4 @@ export { default as adminSeriesService } from './admin/series.service'
 export { default as adminBannerService } from './admin/banner.service'
 export { default as adminProductService } from './admin/product.service'
 export { default as adminReviewService } from './admin/review.service'
+export { default as adminOrderService } from './admin/order.service'

@@ -10,6 +10,8 @@ export { default as cartConstant } from './cart.constant'
 export { default as addressConstant } from './address.constant'
 export { default as favoriteConstant } from './favorite.constant'
 export { default as reviewConstant } from './review.constant'
+export { default as orderConstant } from './order.constant'
+
 
 
 

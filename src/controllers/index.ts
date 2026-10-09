@@ -9,6 +9,8 @@ export { default as clientCartController } from './client/cart.controller'
 export { default as clientAdressController } from './client/address.controller'
 export { default as clientFavoriteController } from './client/favorite.controller'
 export { default as clientReviewController } from './client/review.controller'
+export { default as clientOrderController } from './client/order.controller'
+export { default as clientPaymentController } from './client/payment.controller'
 
 
 
@@ -27,3 +29,4 @@ export { default as adminAuthorController } from './admin/author.controller'
 export { default as adminSeriesController } from './admin/series.controller'
 export { default as adminProductController } from './admin/product.controller'
 export { default as adminReviewController } from './admin/review.controller'
+export { default as adminOrderController } from './admin/order.controller'

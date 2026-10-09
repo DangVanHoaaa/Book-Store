@@ -4,6 +4,8 @@ export { default as cartValidate } from './client/cart.validate'
 export { default as addressValidate } from './client/address.validate' 
 export { default as favoriteValidate } from './client/favorite.validate' 
 export { default as reviewValidate } from './client/review.validate' 
+export { default as orderValidate } from './client/order.validate' 
+
 
 
 

@@ -10,6 +10,8 @@ import clientCartRoute from './client/cart.route'
 import clientAddressRoute from './client/address.route'
 import clientFavoriteRoute from './client/favorite.route'
 import clientReviewRoute from './client/review.route'
+import clientOrderRoute from './client/order.route'
+import paymentRouter from './client/payment.route'
 
 
 
@@ -26,6 +28,7 @@ import bannerAdminRoute from './admin/banner.route'
 import adminProductRoute from './admin/product.route'
 import adminUploadRoute from './admin/upload.route'
 import adminReviewRoute from './admin/review.route'
+import adminOrderRoute from './admin/order.route'
 
 const routers: Router = Router()
 
@@ -40,6 +43,8 @@ routers.use('/admin/banners', bannerAdminRoute)
 routers.use('/admin/products', adminProductRoute)
 routers.use('/admin/upload', adminUploadRoute)
 routers.use('/admin/reviews', adminReviewRoute)
+routers.use('/admin/orders', adminOrderRoute)
+routers.use('/payment', paymentRouter)
 
 
 
@@ -54,5 +59,6 @@ routers.use('/cart', clientCartRoute)
 routers.use('/addresses', clientAddressRoute)
 routers.use('/favorites', clientFavoriteRoute)
 routers.use('/reviews', clientReviewRoute)
+routers.use('/orders', clientOrderRoute)
 
 export default routers
